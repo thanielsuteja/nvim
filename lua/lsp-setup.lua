@@ -59,8 +59,6 @@ require('which-key').register {
 require('mason').setup()
 require('mason-lspconfig').setup()
 
--- require 'nvim_lsp.dartls'
-
 -- require'lspconfig'.biome.setup{}
 
 -- Enable the following language servers
@@ -78,9 +76,6 @@ local servers = {
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-  -- dartls = {
-  --   cmd = { "dart", 'language-server', '--protocol=lsp' },
-  -- },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -115,7 +110,7 @@ mason_lspconfig.setup_handlers {
 }
 
 require('lspconfig').dartls.setup {
-  require('nvim_lsp.dartls'),
+  require('lsp.dartls'),
   capabilities = capabilities,
   on_attach = on_attach,
 }
