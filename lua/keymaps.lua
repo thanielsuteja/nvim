@@ -22,6 +22,9 @@ vim.keymap.set('n', '<C-e>', vim.diagnostic.goto_next, { desc = 'Go to next diag
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- Oil
+vim.keymap.set('n', '<leader>pv', ':Oil<CR>', { desc = 'Oil' })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -32,5 +35,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+local oil = require('oil')
+vim.keymap.set('n', '<leader>fl', oil.toggle_float)
+vim.keymap.set('n', '<leader>fL', oil.open_float)
 
 -- vim: ts=2 sts=2 sw=2 et
