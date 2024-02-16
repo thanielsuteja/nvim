@@ -1,6 +1,6 @@
 require('rose-pine').setup({
   variant = 'auto',
-  dark_variant = 'moon', -- main, moon, or dawn
+  dark_variant = 'main', -- main, moon, or dawn
   dim_inactive_windows = false,
 
   enable = {

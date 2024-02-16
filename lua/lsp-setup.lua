@@ -38,9 +38,11 @@ local on_attach = function(_, bufnr)
   end, '[W]orkspace [L]ist Folders')
 
   -- Create a command `:Format` local to the LSP buffer
-  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+  -- vim.api.nvim_buf_create_user_command(bufnr, 'Format', format_file, { desc = 'Format current buffer with LSP' })
+
+  nmap('<leader>f', function(_)
     vim.lsp.buf.format()
-  end, { desc = 'Format current buffer with LSP' })
+  end, 'Format current buffer with LSP')
 end
 
 -- document existing key chains
@@ -113,6 +115,12 @@ require('lspconfig').dartls.setup {
   require('lsp.dartls'),
   capabilities = capabilities,
   on_attach = on_attach,
+  settings = {
+    dart = {
+      -- more settings at https://github.com/dart-lang/sdk/blob/main/pkg/analysis_server/tool/lsp_spec/README.md
+      lineLength = 150,
+    }
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
