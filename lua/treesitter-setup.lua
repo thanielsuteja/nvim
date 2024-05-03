@@ -53,6 +53,12 @@ vim.defer_fn(function()
           ['[M'] = '@function.outer',
           ['[]'] = '@class.outer',
         },
+        goto_next = {
+          [']d'] = '@conditional.outer',
+        },
+        goto_previous = {
+          ['[d'] = '@conditional.outer',
+        },
       },
       swap = {
         enable = true,
@@ -63,8 +69,29 @@ vim.defer_fn(function()
           ['<leader>A'] = '@parameter.inner',
         },
       },
+      lsp_interop = {
+        enable = true,
+        border = 'single',
+        floating_preview_opts = {},
+        peek_definition_code = {
+          ["<leader>k"] = "@function.outer",
+          ["<leader>K"] = "@class.outer",
+        },
+      },
     },
   }
 end, 0)
+
+local ts_repeat_move = require 'nvim-treesitter.textobjects.repeatable_move'
+
+-- Repeat movement with ; and ,
+-- ensure ; goes forward and , goes backward regardless of the last direction
+vim.keymap.set({ 'n', 'x', 'o' }, ';', ts_repeat_move.repeat_last_move_next)
+vim.keymap.set({ 'n', 'x', 'o' }, ',', ts_repeat_move.repeat_last_move_previous)
+
+vim.keymap.set({ 'n', 'x', 'o' }, 'f', ts_repeat_move.builtin_f)
+vim.keymap.set({ 'n', 'x', 'o' }, 'F', ts_repeat_move.builtin_F)
+vim.keymap.set({ 'n', 'x', 'o' }, 't', ts_repeat_move.builtin_t)
+vim.keymap.set({ 'n', 'x', 'o' }, 'T', ts_repeat_move.builtin_T)
 
 -- vim: ts=2 sts=2 sw=2 et

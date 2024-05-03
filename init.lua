@@ -2,6 +2,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+require 'globals'
+
 -- [[ Install lazy.nvim ]]
 require 'lazy-bootstrap'
 

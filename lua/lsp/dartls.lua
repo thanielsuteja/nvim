@@ -35,7 +35,7 @@ return {
   filetypes = { 'dart' },
   root_dir = configs.util.root_pattern 'pubspec.yaml',
   init_options = {
-    onlyAnalyzeProjectsWithOpenFiles = true,
+    onlyAnalyzeProjectsWithOpenFiles = false,
     suggestFromUnimportedLibraries = true,
     closingLabels = true,
     outline = true,
