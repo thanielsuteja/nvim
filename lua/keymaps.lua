@@ -7,10 +7,14 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- idk, i was told not to use the basic 'Q' function no matter what
 -- vim.keymap.set({ 'n' }, 'Q', '<nop>')
 
+-- fugitive
+vim.keymap.set('n', '<leader>gb', ":Git blame<CR>")
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- TODO add {count} to this
 -- Move statement up (K) and down (J)
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
@@ -18,11 +22,18 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', '<C-d>', "<C-d>zz")
 vim.keymap.set('n', '<C-u>', "<C-u>zz")
 
+-- [[ OTHERS ]]
+vim.keymap.set({ 'i', 'n' }, '<C-j>', "<CR>") -- <NL> is weird, use <CR>
+vim.keymap.set('n', '<C-c>', "<C-w>c")        -- Make <C-c> to always close everything ehe
+
+vim.keymap.set('n', 'go', "occ")
+vim.keymap.set('n', 'gO', "Occ")
+
 -- Void put
 -- vim.keymap.set('x', '<leader>p', "\"_dP")
 
-vim.keymap.set({'v', 'n'}, '<leader>y', "\"+y")
-vim.keymap.set('n', '<leader>Y', "\"+Y")
+vim.keymap.set({ 'v', 'n' }, '<leader>y', "\"+y")
+vim.keymap.set('n', '<leader>Y', "\"+y$")
 
 -- Use when you are ready for quickfixes
 -- vim.keymap.set('n', 'TODO', "<cmd>cnext<CR>zz")
@@ -54,7 +65,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Oil
-local oil = require'oil'
-vim.keymap.set('n', '<leader>pv', oil.toggle_float, { desc = 'Oil' })
+vim.keymap.set('n', '<leader>pv', ':Oil<CR>', { desc = 'Oil' })
 
 -- vim: ts=2 sts=2 sw=2 et

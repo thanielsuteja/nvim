@@ -9,7 +9,6 @@ require('lazy').setup({
 
   -- Git related plugins
   'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -50,25 +49,12 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',   opts = {} },
-
   {
-    'lewis6991/gitsigns.nvim',
+    'folke/which-key.nvim',
+    opts = {},
   },
 
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'rose-pine',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
+  { 'lewis6991/gitsigns.nvim' },
 
   {
     -- Add indentation guides even on blank lines
@@ -127,8 +113,9 @@ require('lazy').setup({
   },
 
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart

@@ -118,16 +118,16 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
-require('lspconfig').dartls.setup {
-  require('lsp.dartls'),
-  capabilities = capabilities,
-  on_attach = on_attach,
-  settings = {
-    dart = {
-      -- more settings at https://github.com/dart-lang/sdk/blob/main/pkg/analysis_server/tool/lsp_spec/README.md
-      lineLength = 150,
-    }
-  },
-}
+-- require('lspconfig').dartls.setup {
+--   require('lsp.dartls'),
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   settings = {
+--     dart = {
+--       -- more settings at https://github.com/dart-lang/sdk/blob/main/pkg/analysis_server/tool/lsp_spec/README.md
+--       lineLength = 150,
+--     }
+--   },
+-- }
 
 -- vim: ts=2 sts=2 sw=2 et
