@@ -5,8 +5,17 @@
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
+-- Sets how neovim will display certain whitespace characters in the editor.
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
 -- Enable break indent
--- vim.o.breakindent = true
+vim.o.breakindent = true
+
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+vim.o.conceallevel = 2
 
 -- Save undo history
 vim.o.undofile = true

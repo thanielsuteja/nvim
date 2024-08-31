@@ -1,11 +1,7 @@
 -- [[ Basic Keymaps ]]
-
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- idk, i was told not to use the basic 'Q' function no matter what
--- vim.keymap.set({ 'n' }, 'Q', '<nop>')
 
 -- fugitive
 vim.keymap.set('n', '<leader>gb', ":Git blame<CR>")
