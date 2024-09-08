@@ -18,9 +18,11 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', '<C-d>', "<C-d>zz")
 vim.keymap.set('n', '<C-u>', "<C-u>zz")
 
+-- vim surround
+vim.keymap.set('n', 'S', "ys", { remap = true })
+
 -- [[ OTHERS ]]
-vim.keymap.set({ 'i', 'n' }, '<C-j>', "<CR>") -- <NL> is weird, use <CR>
-vim.keymap.set('n', '<C-c>', "<C-w>c")        -- Make <C-c> to always close everything ehe
+-- vim.keymap.set({ 'i', 'n' }, '<C-j>', "<CR>") -- <NL> is weird, use <CR>
 
 vim.keymap.set('n', 'go', "occ")
 vim.keymap.set('n', 'gO', "Occ")
@@ -48,6 +50,13 @@ vim.keymap.set('n', '<C-y>', vim.diagnostic.goto_prev, { desc = 'Go to previous 
 vim.keymap.set('n', '<C-e>', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- Vim tmux navigation
+vim.keymap.set({ 'n', 'v' }, "<M-h>", ":TmuxNavigateLeft<cr>")
+vim.keymap.set({ 'n', 'v' }, "<M-j>", ":TmuxNavigateDown<cr>")
+vim.keymap.set({ 'n', 'v' }, "<M-k>", ":TmuxNavigateUp<cr>")
+vim.keymap.set({ 'n', 'v' }, "<M-l>", ":TmuxNavigateRight<cr>")
+-- vim.keymap.set({ 'n', 'v' }, "<M-\\>", ":TmuxNavigatePrevious<cr>")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

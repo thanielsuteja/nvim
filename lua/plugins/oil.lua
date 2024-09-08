@@ -22,9 +22,11 @@ return {
 
       ["L"] = "actions.select",
       ["H"] = "actions.parent",
-      ["<C-d>"] = "actions.preview_scroll_down",
-      ["<C-u>"] = "actions.preview_scroll_up",
-      ["<C-P>"] = { "actions.preview", opts = { vertical = true, split = "belowright" }, desc = "Open preview vertically" },
+      ["K"] = "actions.preview_scroll_up",
+      ["J"] = "actions.preview_scroll_down",
+      -- ["<C-d>"] = "actions.preview_scroll_down",
+      -- ["<C-u>"] = "actions.preview_scroll_up",
+      ["<C-;>"] = { "actions.preview", desc = "Open preview vertically" },
     },
   },
   -- Optional dependencies
