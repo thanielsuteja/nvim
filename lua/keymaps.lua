@@ -18,6 +18,9 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', '<C-d>', "<C-d>zz")
 vim.keymap.set('n', '<C-u>', "<C-u>zz")
 
+vim.keymap.set('n', 'gp', "`[v`]")
+vim.keymap.set('n', 'gP', "`[V`]")
+
 -- vim surround
 vim.keymap.set('n', 'S', "ys", { remap = true })
 
@@ -26,6 +29,7 @@ vim.keymap.set('n', 'S', "ys", { remap = true })
 
 vim.keymap.set('n', 'go', "occ")
 vim.keymap.set('n', 'gO', "Occ")
+vim.keymap.set({ 'n', 'v' }, "<leader>", ":noh<CR>")
 
 -- Void put
 -- vim.keymap.set('x', '<leader>p', "\"_dP")
